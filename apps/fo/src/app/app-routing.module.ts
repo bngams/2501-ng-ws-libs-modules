@@ -9,6 +9,7 @@ const routes: Routes = [
   { path:'', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'products', loadChildren: () => import('./modules/product/product.module').then(m => m.ProductModule) },
   { path: '**', component: NotFoundComponent }, // '**' like Regex captures all
 ];
 

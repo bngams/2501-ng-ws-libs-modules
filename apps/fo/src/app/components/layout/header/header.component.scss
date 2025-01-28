@@ -6,5 +6,10 @@ mat-toolbar {
 ul {
   display: flex;
   list-style-type: none;
-  gap: 2;
+  gap: 5px;
+}
+
+.current-page-class {
+  color: var(--mat-sys-primary) !important;
+  font-weight: bold;
 }

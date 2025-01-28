@@ -4,7 +4,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
-      "core": [
+      "@project/core": [
         "./dist/core"
       ]
     },

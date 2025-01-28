@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CoreComponent } from 'core'; // ts path config
+import { CoreComponent } from '@project/core'; // ts path config
 
 @NgModule({
   // define components

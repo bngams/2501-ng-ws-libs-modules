@@ -5,3 +5,4 @@
 export * from './lib/core.service';
 export * from './lib/core.component';
 export * from './lib/material.barrel';
+export * from './lib/material.module';

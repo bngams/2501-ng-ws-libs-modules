@@ -1,6 +1,7 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Product } from '@project/core';
+import { ProductService } from '../../../../../../../../libs/core/src/lib/services/product.service';
 
 @Component({
   selector: 'fo-product-form',
@@ -11,6 +12,12 @@ import { Product } from '@project/core';
 export class ProductFormComponent {
   @Output()
   productSubmitted = new EventEmitter<Product>();
+
+  constructor(private productService: ProductService) {
+    // or custom injector code
+    // const injector = this.injector.get(Injector);
+    // injector.get('ProductService');
+  }
 
   // we can type FormGroup
   productForm = new FormGroup({
@@ -24,5 +31,7 @@ export class ProductFormComponent {
     const p: Product = this.productForm.value as Product;
     // 2) pass object to emitter or HTTP post (this.httpService.createProduct(p))
     this.productSubmitted.emit(p);
+    // 2) other way to pass object to service
+    this.productService.addProduct(p);
   }
 }

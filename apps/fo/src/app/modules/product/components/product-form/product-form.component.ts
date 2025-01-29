@@ -13,6 +13,8 @@ export class ProductFormComponent {
   @Output()
   productSubmitted = new EventEmitter<Product>();
 
+  isLoading = false;
+
   constructor(private productService: ProductService) {
     // or custom injector code
     // const injector = this.injector.get(Injector);
@@ -26,6 +28,12 @@ export class ProductFormComponent {
   });
 
   onSubmit(): void {
+    if(this.productForm.invalid) {
+      // console.error
+      alert('Form is invalid');
+      return;
+    }
+    this.isLoading = true;
     console.log('Form submitted');
     // 1) complex transformation, checks.... (if needed)
     const p: Product = this.productForm.value as Product;
@@ -33,5 +41,8 @@ export class ProductFormComponent {
     // this.productSubmitted.emit(p);
     // 2) other way to pass object to service
     this.productService.addProduct(p);
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 2000);
   }
 }

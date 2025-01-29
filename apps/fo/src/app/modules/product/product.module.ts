@@ -8,6 +8,7 @@ import { ProductFormComponent } from './components/product-form/product-form.com
 import { ProductDashboardComponent } from './pages/product-dashboard/product-dashboard.component';
 // shortcut @project/core => edit tsconfig to include path from ./libs/core/src/public-api
 import { MaterialModule } from '../../../../../../libs/core/src/public-api';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { MaterialModule } from '../../../../../../libs/core/src/public-api';
   imports: [
     CommonModule,
     ProductRoutingModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ]
 })
 export class ProductModule { }

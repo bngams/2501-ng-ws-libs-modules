@@ -6,6 +6,7 @@ import { ProductCardComponent } from './components/product-card/product-card.com
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductFormComponent } from './components/product-form/product-form.component';
 import { ProductDashboardComponent } from './pages/product-dashboard/product-dashboard.component';
+import { MaterialModule } from '../../../../../../libs/core/src/public-api';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ProductDashboardComponent } from './pages/product-dashboard/product-das
   ],
   imports: [
     CommonModule,
-    ProductRoutingModule
+    ProductRoutingModule,
+    MaterialModule
   ]
 })
 export class ProductModule { }

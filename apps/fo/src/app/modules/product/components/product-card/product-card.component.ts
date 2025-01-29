@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Product } from '@project/core';
 
 @Component({
   selector: 'fo-product-card',
-  standalone: false,
-  
   templateUrl: './product-card.component.html',
-  styleUrl: './product-card.component.scss'
+  styleUrls: ['./product-card.component.scss'],
+  standalone: false
 })
 export class ProductCardComponent {
-
+  // property binding [product]
+  @Input()
+  product!: Product;
 }

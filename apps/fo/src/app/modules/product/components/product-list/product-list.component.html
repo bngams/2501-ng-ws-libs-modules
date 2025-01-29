@@ -1,1 +1,20 @@
-<p>product-list works!</p>
+<div class="container">
+  <ng-container [ngSwitch]="loadMode">
+    <ng-container *ngSwitchCase="LOAD_MODE.REQUEST_OBSERVABLE">
+      <!-- TODO -->
+    </ng-container>
+    <ng-container *ngSwitchCase="LOAD_MODE.REQUEST">
+      <!-- TODO -->
+    </ng-container>
+    <ng-container *ngSwitchCase="LOAD_MODE.SERVICE_STORE">
+      <!-- TODO -->
+    </ng-container>
+    <ng-container *ngSwitchCase="LOAD_MODE.SERVICE_STORE_BEHAV">
+      <!-- TODO -->
+    </ng-container>
+    <ng-container *ngSwitchDefault>
+      <fo-product-card *ngFor="let p of products" [product]="p">
+      </fo-product-card>
+    </ng-container>
+  </ng-container>
+</div>

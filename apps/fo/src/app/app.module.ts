@@ -10,7 +10,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HouseListComponent } from './components/houses/house-list/house-list.component';
 import { HouseCardComponent } from './components/houses/house-card/house-card.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async'; // ts path config
-import { MATERIAL_MODULES } from './material.barrel';
+import { MaterialModule } from '../../../../libs/core/src/public-api';
 
 const PAGES_COMPONENTS = [
   HomeComponent,
@@ -35,7 +35,7 @@ const COMPONENTS = [
   imports: [
     BrowserModule, // CommonModule + ApplicationModule + other features (injector)
     AppRoutingModule,
-    ...MATERIAL_MODULES,
+    MaterialModule
   ],
   providers: [
     provideAnimationsAsync()

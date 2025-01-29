@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Product, PRODUCTS_MOCK } from '@project/core';
+import { ProductCardComponent } from '../product-card/product-card.component';
 
 enum LOAD_MODE {
   MOCK,
@@ -17,6 +18,10 @@ enum LOAD_MODE {
   standalone: false
 })
 export class ProductListComponent implements OnInit {
+
+  // ViewChildren example
+  // @ViewChildren(ProductCardComponent)
+  // productCards!: QueryList<ProductCardComponent>;
 
   products: Product[] = PRODUCTS_MOCK;
 

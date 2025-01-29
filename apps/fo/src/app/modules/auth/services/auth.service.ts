@@ -9,8 +9,9 @@ const LOCALSTORAGE_ITEM = 'my-app-session'
 export class AuthService {
   isLoggedIn = false;
 
+  // DI
   constructor(private router: Router) {
-    // this.getSession();
+    this.getSession();
   }
 
   postLogin(credentials: Credentials): void {
@@ -22,7 +23,7 @@ export class AuthService {
       const sessionData = {userId: 1, validity: '' }; // (from a TOKEN...)
       this.setSession(sessionData);
       // redirect
-      this.router.navigateByUrl('/dashboard');
+      this.router.navigateByUrl('/products');
     }, 500);
   }
 

@@ -30,7 +30,7 @@ export class ProductFormComponent {
     // 1) complex transformation, checks.... (if needed)
     const p: Product = this.productForm.value as Product;
     // 2) pass object to emitter or HTTP post (this.httpService.createProduct(p))
-    this.productSubmitted.emit(p);
+    // this.productSubmitted.emit(p);
     // 2) other way to pass object to service
     this.productService.addProduct(p);
   }

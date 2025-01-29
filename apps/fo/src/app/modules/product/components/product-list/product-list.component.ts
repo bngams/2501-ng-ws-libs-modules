@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Product, PRODUCTS_MOCK } from '@project/core';
 import { ProductCardComponent } from '../product-card/product-card.component';
+import { ProductService } from '../../../../../../../../libs/core/src/lib/services/product.service';
 
 enum LOAD_MODE {
   MOCK,
@@ -30,7 +31,10 @@ export class ProductListComponent implements OnInit {
   loadMode: LOAD_MODE = LOAD_MODE.MOCK;
   LOAD_MODE = LOAD_MODE; // Bind enum for use in the template
 
+  constructor(private productService: ProductService) { }
+
   ngOnInit(): void {
+    this.loadFromService();
   }
 
   appendProduct(product: Product) {
@@ -72,6 +76,6 @@ export class ProductListComponent implements OnInit {
 
   // products are loaded in service instance (like a SERVICE_STORE)
   loadFromService(): void {
-
+    this.products = this.productService.products;
   }
 }

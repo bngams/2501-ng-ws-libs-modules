@@ -4,6 +4,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
+import { MatTabsModule } from '@angular/material/tabs';
 import { Type } from '@angular/core';
 
 const MATERIAL_MODULES: Type<any>[] = [
@@ -12,7 +13,8 @@ const MATERIAL_MODULES: Type<any>[] = [
   MatIconModule,
   MatCardModule,
   MatInputModule,
-  MatFormFieldModule
+  MatFormFieldModule,
+  MatTabsModule,
 ];
 
 export default MATERIAL_MODULES;

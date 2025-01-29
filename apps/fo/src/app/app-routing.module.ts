@@ -9,7 +9,10 @@ const routes: Routes = [
   { path:'', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'contact', component: ContactComponent },
+  // Lazy load with load children
   { path: 'products', loadChildren: () => import('./modules/product/product.module').then(m => m.ProductModule) },
+  // TODO: this AuthModule should be in core lib...
+  { path: 'auth', loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule) },
   { path: '**', component: NotFoundComponent }, // '**' like Regex captures all
 ];
 

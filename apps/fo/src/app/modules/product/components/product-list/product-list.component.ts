@@ -76,6 +76,12 @@ export class ProductListComponent implements OnInit {
 
   // products are loaded in service instance (like a SERVICE_STORE)
   loadFromService(): void {
-    this.products = this.productService.products;
+    // this.productService.loadProducts();
+    // this.products = this.productService.products;
+
+    this.productService.fetchProducts()
+      .subscribe((data) => {
+        this.products = data.products;
+    })
   }
 }
